@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vidhya S | Associate Software Engineer</title>
+<meta name="description" content="Portfolio of Vidhya S, Associate Software Engineer at Cogniwide Technologies. GenAI, full stack development and software testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2A5B; --blue:#1D4ED8; --soft:#EFF5FF; --line:#D9E4F5;
+  --text:#1F2A44; --muted:#5B6B8A; --white:#FFFFFF;
+  --font:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font:400 1rem/1.7 var(--font);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+h1,h2,h3{color:var(--navy);line-height:1.2;letter-spacing:-.01em}
+
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.15rem;color:var(--navy);text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.93rem}
+nav ul a:hover{color:var(--blue)}
+@media(max-width:760px){nav ul{display:none}}
+
+.hero{background:linear-gradient(180deg,var(--soft),var(--white));padding:72px 0 64px}
+.hero .wrap{display:flex;gap:40px;align-items:center}
+.avatar{flex:none;width:132px;height:132px;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;font-weight:800;font-size:2.6rem;box-shadow:0 0 0 6px var(--white),0 0 0 8px var(--line)}
+.avatar{position:relative;overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.avatar .initials{display:none}
+.avatar.nophoto .initials{display:block}
+.hero h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:800}
+.hero .role{margin-top:6px;font-size:1.2rem;font-weight:600;color:var(--blue)}
+.hero p{margin-top:16px;max-width:60ch;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;padding:11px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--blue);color:var(--blue);background:var(--white)}
+.btn:hover{background:var(--soft)}
+.btn.fill{background:var(--blue);color:var(--white)}
+.btn.fill:hover{background:var(--navy);border-color:var(--navy)}
+@media(max-width:700px){.hero .wrap{flex-direction:column;align-items:flex-start;gap:24px}.avatar{width:104px;height:104px;font-size:2.1rem}}
+
+section{padding:64px 0}
+section.alt{background:var(--soft)}
+.title{font-size:clamp(1.6rem,3.5vw,2rem);font-weight:800;margin-bottom:8px}
+.title::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--blue);margin-top:10px}
+.sub{color:var(--muted);margin:14px 0 32px;max-width:62ch}
+
+/* experience timeline */
+.timeline{border-left:2px solid var(--line);margin-left:6px;padding-left:28px}
+.item{position:relative;margin-bottom:36px}
+.item::before{content:"";position:absolute;left:-37px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--white);border:3px solid var(--blue)}
+.item h3{font-size:1.2rem}
+.item .meta{color:var(--muted);font-size:.92rem;margin:2px 0 10px}
+.item .meta b{color:var(--blue);font-weight:600}
+.item ul{padding-left:1.1em;max-width:70ch}
+.item li{margin:6px 0}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:10px;padding:22px}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span,.chips li{font-size:.82rem;font-weight:600;color:var(--navy);background:var(--soft);border:1px solid var(--line);padding:3px 11px;border-radius:99px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.skill{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:20px}
+.skill h3{font-size:1rem;margin-bottom:12px}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{background:var(--white);font-weight:500}
+.chips em{font-style:normal;color:var(--muted);font-weight:500}
+
+/* education */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.box{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
+.box h3{font-size:1.05rem;margin-bottom:10px}
+.box ul{padding-left:1.1em}
+.box li{margin:5px 0}
+.box p{color:var(--muted)}
+
+/* contact */
+.contact{background:var(--navy);color:var(--white)}
+.contact .title,.contact h2{color:var(--white)}
+.contact .title::after{background:#7FA8FF}
+.contact p{color:#C7D6F2;max-width:56ch;margin:14px 0 26px}
+.contact .btn{border-color:#7FA8FF;color:var(--white);background:transparent}
+.contact .btn:hover{background:rgba(255,255,255,.1)}
+.contact .btn.fill{background:var(--white);color:var(--navy);border-color:var(--white)}
+footer{background:#08204A;color:#9FB3D9;text-align:center;padding:18px;font-size:.88rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="logo" href="#top">Vidhya S</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="avatar">
+        <img src="photo.jpeg" alt="Photo of Vidhya S" onerror="this.parentNode.classList.add('nophoto');this.remove()">
+        <span class="initials" aria-hidden="true">VS</span>
+      </div>
+      <div>
+        <h1>Vidhya S</h1>
+        <div class="role">Associate Software Engineer | GenAI · Full Stack · Software Testing</div>
+        <p>I build AI products, full stack applications and quality-tested releases at Cogniwide Technologies.</p>
+        <div class="actions">
+          <a class="btn fill" href="#contact">Contact me</a>
+          <a class="btn" href="Vidhya_S_Resume.pdf" download>Download resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="title">About me</h2>
+      <p class="sub" style="margin-bottom:0">I am an Associate Software Engineer at Cogniwide Technologies who ships GenAI products, full stack applications and quality-engineered releases. I designed and built an AI interview platform that automates hiring end to end, from scheduling through online assessment to AI-driven candidate evaluation. I have also delivered client solutions in AI chatbot management and data analytics, and I own functional and performance testing with Apache JMeter. I graduated in Artificial Intelligence and Data Science and enjoy using technology to solve real-world problems.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="alt">
+    <div class="wrap">
+      <h2 class="title">Experience</h2>
+      <p class="sub">Work at Cogniwide Technologies Pvt. Ltd.</p>
+      <div class="timeline">
+        <div class="item">
+          <h3>Associate Software Engineer</h3>
+          <div class="meta"><b>Cogniwide Technologies Pvt. Ltd.</b> · Jul 2026 to present</div>
+          <ul>
+            <li>Designed and built an AI-powered interview platform on the CogniAssist AI Platform, automating the full hiring lifecycle: scheduling, online assessments and AI-driven candidate evaluation.</li>
+            <li>Integrated LLM-based evaluation to score and summarise candidate responses, reducing manual screening effort for recruiters.</li>
+            <li>Deployed and managed AI models and services on AWS and Azure, supporting reliable production use.</li>
+            <li>Delivered AI chatbot solutions for enterprise customers, owning configuration, maintenance and performance.</li>
+            <li>Built data models and analytics dashboards for customer projects, turning raw business data into decision-ready insights.</li>
+            <li>Owned end-to-end testing for a customer project, designing functional test cases and running load and performance tests in Apache JMeter to validate stability before release.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Software Engineer Intern</h3>
+          <div class="meta"><b>Cogniwide Technologies Pvt. Ltd.</b> · Jan 2026 to May 2026</div>
+          <ul>
+            <li><b>CogniRPA:</b> developed a drag-and-drop visual builder in React Flow that lets users create Robot Framework test automation flows without writing scripts.</li>
+            <li><b>AISC:</b> engineered layered analytics tables from raw school data, powering dashboard visualisations for reporting.</li>
+            <li><b>Nesto SAP:</b> built a proof of concept automating price updates in the SAP desktop application with the RPA Framework.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="title">Projects</h2>
+      <p class="sub">Academic and personal projects across machine learning, web development and systems.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Smart Resume Parser</h3>
+          <p>An NLP pipeline that extracts key candidate details from resumes, with an ML classifier that shortlists them as Selected or Not Selected based on predefined criteria. Includes a simple GUI.</p>
+          <div class="tags"><span>NLP</span><span>Machine learning</span><span>GUI</span></div>
+        </article>
+        <article class="card">
+          <h3>Chain Snatching Detection</h3>
+          <p>A deep learning model built on the Vision Transformer (ViT) architecture that automatically detects chain snatching incidents in surveillance footage.</p>
+          <div class="tags"><span>Deep learning</span><span>Vision Transformer</span></div>
+        </article>
+        <article class="card">
+          <h3>Gym Management System</h3>
+          <p>A Python and MySQL application for efficient database management and real-time data retrieval.</p>
+          <div class="tags"><span>Python</span><span>MySQL</span></div>
+        </article>
+        <article class="card">
+          <h3>Online Food Delivery App</h3>
+          <p>An online food delivery platform similar to Zomato, with order tracking and status updates implemented in React.</p>
+          <div class="tags"><span>React</span><span>MongoDB</span></div>
+        </article>
+        <article class="card">
+          <h3>AI-Powered Games for Mentally Challenged Children</h3>
+          <p>Interactive games such as Color Identification, Shape Matching and Object Recognition, designed to improve learning engagement.</p>
+          <div class="tags"><span>AI</span><span>GUI</span></div>
+        </article>
+        <article class="card">
+          <h3>Parallel File Processing</h3>
+          <p>Multi-threading and multiprocessing for simultaneous file read and write operations, using mutexes, semaphores and locks to prevent data inconsistency.</p>
+          <div class="tags"><span>Operating systems</span><span>Concurrency</span></div>
+        </article>
+        <article class="card">
+          <h3>CogniRPA Visual Builder</h3>
+          <p>A drag-and-drop builder in React Flow for creating Robot Framework test automation flows without writing scripts (internship project).</p>
+          <div class="tags"><span>React Flow</span><span>Robot Framework</span><span>RPA</span></div>
+        </article>
+        <article class="card">
+          <h3>AISC Analytics</h3>
+          <p>Layered analytics tables engineered from raw school data to power dashboard visualisations for reporting (internship project).</p>
+          <div class="tags"><span>Data modelling</span><span>Dashboards</span></div>
+        </article>
+        <article class="card">
+          <h3>Nesto SAP Automation</h3>
+          <p>A proof of concept that automates price updates in the SAP desktop application using the RPA Framework (internship project).</p>
+          <div class="tags"><span>RPA Framework</span><span>SAP</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="alt">
+    <div class="wrap">
+      <h2 class="title">Skills</h2>
+      <p class="sub">Technical skills, tools and soft skills.</p>
+      <div class="skills">
+        <div class="skill"><h3>Generative AI</h3><ul class="chips"><li>LLM integration</li><li>Prompt engineering</li><li>AI chatbots</li><li>AI evaluation</li></ul></div>
+        <div class="skill"><h3>Programming languages</h3><ul class="chips"><li>Java </li><li>Python </li><li>C++ </li></ul></div>
+        <div class="skill"><h3>Full stack</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>React Flow</li></ul></div>
+        <div class="skill"><h3>Databases</h3><ul class="chips"><li>MySQL</li><li>MongoDB</li><li>Neo4j</li></ul></div>
+        <div class="skill"><h3>Testing and automation</h3><ul class="chips"><li>E2E testing</li><li>Functional testing</li><li>Non-functional testing</li><li>Apache JMeter</li><li>RPA</li></ul></div>
+        <div class="skill"><h3>Cloud and deployment</h3><ul class="chips"><li>Amazon Bedrock</li><li>Amazon ECS</li><li>Amazon S3</li><li>Azure AI Foundry</li><li>Azure Container Apps</li><li>Azure Blob Storage</li></ul></div>
+        <div class="skill"><h3>Data and ML</h3><ul class="chips"><li>PyTorch</li><li>Keras</li><li>Power BI</li><li>Regression</li><li>Classification</li><li>Clustering</li></ul></div>
+        <div class="skill"><h3>Soft skills</h3><ul class="chips"><li>Teamwork</li><li>Leadership</li><li>Time management</li><li>Communication</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2 class="title">Education and certifications</h2>
+      <p class="sub"></p>
+      <div class="two">
+        <div class="box">
+          <h3>B.Tech, Artificial Intelligence and Data Science</h3>
+          <p>Mepco Schlenk Engineering College<br>Completed 2026 · CGPA 7.43</p>
+        </div>
+        <div class="box">
+          <h3>Higher secondary and school</h3>
+          <p>T.N.P.M.M. Ammayapa Nadar Girls' Hr. Sec. School<br>HSC 2022: 88.1% · SSLC 2020: 82.8%</p>
+        </div>
+        <div class="box">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Microsoft Power BI Certification (2025)</li>
+            <li>Cloud Computing Essentials (2025)</li>
+            <li>The Joy of Computing using Python, NPTEL (2024 to 2025)</li>
+            <li>Web Development Certification, Infosys (2024)</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Co-curricular</h3>
+          <ul>
+            <li>Participated in the symposium at Ramakrishna College of Engineering</li>
+            <li>Participated in the symposium at Velammal Engineering College</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="title">Get in touch</h2>
+      <p>I am open to opportunities in GenAI, full stack development and software testing. Email is the fastest way to reach me.</p>
+      <div class="actions">
+        <a class="btn fill" href="mailto:vidhyaselvaraj1712005@gmail.com">vidhyaselvaraj1712005@gmail.com</a>
+        <a class="btn" href="tel:+918248315250">+91 82483 15250</a>
+        <a class="btn" href="https://www.linkedin.com/in/vidhya-selvaraj-a4aa76294" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://leetcode.com/u/VidhyaS17" target="_blank" rel="noopener">LeetCode</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Vidhya S. All rights reserved.</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
